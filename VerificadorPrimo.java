@@ -12,12 +12,12 @@ import java.util.Scanner;
 public class VerificadorPrimo {
 
     public static void main(String[] args) {
-         Scanner input = new Scanner(System.in);
+         Scanner scanner = new Scanner(System.in);
         String resposta;
 
         do {
             System.out.print("Digite um número inteiro: ");
-            int numero = input.nextInt();
+            int numero = scanner.nextInt();
 
             boolean ehPrimo = true;
 
@@ -39,10 +39,10 @@ public class VerificadorPrimo {
             }
 
             System.out.print("Deseja testar outro número? (s/n): ");
-            resposta = input.next().toLowerCase();
+            resposta = scanner.next().toLowerCase();
 
         } while (resposta.equals("s"));
 
-        input.close();
+        scanner.close();
     }
 }
