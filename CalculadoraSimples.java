@@ -12,20 +12,20 @@ public class CalculadoraSimples {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         float num1, num2, resultado;
         char operacao;
 
         System.out.println("=== CALCULADORA ===");
         System.out.print("Digite o primeiro número: ");
-        num1 = input.nextFloat();
+        num1 = scanner.nextFloat();
 
         System.out.print("Digite o segundo número: ");
-        num2 = input.nextFloat();
+        num2 = scanner.nextFloat();
 
         System.out.print("Escolha a operação (+, -, *, /): ");
-        operacao = input.next().charAt(0);
+        operacao = scanner.next().charAt(0);
 
         switch (operacao) {
             case '+':
@@ -52,7 +52,7 @@ public class CalculadoraSimples {
                 System.out.println("Operação inválida.");
         }
 
-        input.close();
+        scanner.close();
     }
 }
     
