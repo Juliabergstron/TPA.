@@ -3,58 +3,43 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 
-
 import java.util.Scanner;
- 
-public class CalculadoraSimples {
 
-    /**
-     * @param args the command line arguments
-     */
+public class CalculadoraSimples{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        float num1, num2, resultado;
-        char operacao;
+        System.out.println("=== CALCULADORA SIMPLES ===");
 
-        System.out.println("=== CALCULADORA ===");
+        // Entrada dos números
         System.out.print("Digite o primeiro número: ");
-        num1 = scanner.nextFloat();
+        double num1 = scanner.nextDouble();
 
         System.out.print("Digite o segundo número: ");
-        num2 = scanner.nextFloat();
+        double num2 = scanner.nextDouble();
 
-        System.out.print("Escolha a operação (+, -, *, /): ");
-        operacao = scanner.next().charAt(0);
+        // Entrada da operação
+        System.out.print("Digite a operação (+, -, *, /): ");
+        char op = scanner.next().charAt(0);
 
-        switch (operacao) {
-            case '+':
-                resultado = num1 + num2;
-                System.out.println("Resultado da soma: " + resultado);
-                break;
-            case '-':
-                resultado = num1 - num2;
-                System.out.println("Resultado da subtração: " + resultado);
-                break;
-            case '*':
-                resultado = num1 * num2;
-                System.out.println("Resultado da multiplicação: " + resultado);
-                break;
-            case '/':
-                if (num2 == 0) {
-                    System.out.println("Erro: divisão por zero.");
-                } else {
-                    resultado = num1 / num2;
-                    System.out.println("Resultado da divisão: " + resultado);
-                }
-                break;
-            default:
-                System.out.println("Operação inválida.");
-        }
+        // Operações manuais com uso do operador ternário
+        double soma = (op == '+') ? num1 + num2 : 0;
+        double sub = (op == '-') ? num1 - num2 : 0;
+        double mult = (op == '*') ? num1 * num2 : 0;
+        double div = (op == '/' && num2 != 0) ? num1 / num2 : 0;
+        
+
+        // Impressão do resultado
+  
+        System.out.println((op == '+') ? "Resultado: " + soma : "");
+        System.out.println((op == '-') ? "Resultado: " + sub : "");
+        System.out.println((op == '*') ? "Resultado: " + mult : "");
+        System.out.println((op == '/' && num2 != 0) ? "Resultado: " + div : "");
 
         scanner.close();
     }
 }
+
     
     
 
