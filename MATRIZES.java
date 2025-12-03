@@ -9,32 +9,37 @@ public class MATRIZES {
         // matriz com: nome, nota1, nota2, média
         String[][] itens = new String[3][4];
 
-            System.out.print("Avaliação de desempenho de jogos");
+            System.out.print("Padaria\n");
+            System.out.print("Pão Frances: $0,50\n");
+            System.out.print("Pão de Leite: $0,75\n");
+            System.out.print("Doces: $1,50\n");
+            System.out.print("Frios: $15,0\n");
+            
         for (int i = 1; i < 3; i++) {
 
-            System.out.println("\nJogo " + i);
+            System.out.println("\nConta da Padaria " + i);
 
-            System.out.print("Nome do jogo: ");
+            System.out.print("Item: ");
             itens[i][0] = entrada.nextLine();
 
-            System.out.print("Nota para o design: ");
+            System.out.print("Preço: ");
             itens[i][1] = entrada.nextLine();
 
-            System.out.print("Nota para o funcionamento: ");
+            System.out.print("Quantidade: ");
             itens[i][2] = entrada.nextLine();
 
         //média
-            double media = (Double.parseDouble(itens[i][1]) + Double.parseDouble(itens[i][2])) / 2;
+            double media = (Double.parseDouble(itens[i][1])* Double.parseDouble(itens[i][2])) ;
             itens[i][3] = String.valueOf(media);
         }
 
         // Exibindo tabela final
-        System.out.println("\n Avaliação de desempenho de jogos \n");
-        System.out.printf("| %-12s | %-5s | %-5s | %-16s |\n",
-                "Jogo", "Nota 1", "Nota 2", "Desempenho total");
+        System.out.println("\n Conta da Padaria\n");
+        System.out.printf("| %-12s | %-5s | %-5s | %-10s |\n",
+                "Item", "Quantidade", "Preço", "Total");
 
         for (int i = 1; i < 3; i++) {
-            System.out.printf("| %-12s | %-6s | %-6s | %-16s |\n",
+            System.out.printf("| %-12s | %-10s | %-5s | %-10s |\n",
                     itens[i][0], itens[i][1], itens[i][2], itens[i][3]);
         }
     }
